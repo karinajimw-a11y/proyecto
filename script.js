@@ -1341,3 +1341,109 @@ showView = function(view) {
         renderCheckout();
     }
 };
+// --- LABORATORIO: Productos y Carrito de Compras ---
+const productos = [
+    { id: 1, nombre: "Nike Air Zoom", precio: 250000, categoria: "running" },
+    { id: 2, nombre: "Adidas Superstar", precio: 230000, categoria: "casual" },
+    { id: 3, nombre: "Puma RS-X", precio: 210000, categoria: "running" },
+    { id: 4, nombre: "Reebok Classic", precio: 190000, categoria: "casual" },
+    { id: 5, nombre: "Jordan Retro", precio: 280000, categoria: "basketball" }
+];
+
+let carrito = [];
+
+// Mostrar productos
+function mostrarProductos(lista = productos) {
+    const contenedor = document.getElementById("productos");
+    if (!contenedor) return;
+    contenedor.innerHTML = "";
+
+    lista.forEach(prod => {
+        const div = document.createElement("div");
+        div.classList.add("producto", "card", "p-3", "m-2", "text-center");
+        div.innerHTML = `
+            <h5>${prod.nombre}</h5>
+            <p>Precio: $${prod.precio.toLocaleString()}</p>
+            <button class="btn btn-primary" onclick="agregarAlCarrito(${prod.id})">Agregar al carrito</button>
+        `;
+        contenedor.appendChild(div);
+    });
+}
+mostrarProductos();
+
+// Agregar producto al carrito
+function agregarAlCarrito(id) {
+    const producto = productos.find(p => p.id === id);
+    carrito.push(producto);
+    actualizarCarrito();
+    actualizarContadorProductos();
+}
+
+// Mostrar carrito
+function actualizarCarrito() {
+    const lista = document.getElementById("listaCarrito");
+    const total = document.getElementById("total");
+    if (!lista || !total) return;
+
+    lista.innerHTML = "";
+    carrito.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.classList.add("list-group-item", "d-flex", "justify-content-between");
+        li.innerHTML = `
+            ${item.nombre} - $${item.precio.toLocaleString()}
+            <button class="btn btn-sm btn-outline-danger" onclick="eliminarProducto(${index})">❌</button>
+        `;
+        lista.appendChild(li);
+    });
+
+    const suma = carrito.reduce((acc, item) => acc + item.precio, 0);
+    total.textContent = `Total: $${suma.toLocaleString()}`;
+}
+
+// Eliminar producto del carrito
+function eliminarProducto(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+    actualizarContadorProductos();
+}
+
+// Vaciar carrito
+const btnVaciar = document.getElementById("vaciarCarrito");
+if (btnVaciar) {
+    btnVaciar.addEventListener("click", () => {
+        carrito = [];
+        actualizarCarrito();
+        actualizarContadorProductos();
+    });
+}
+
+// Filtro por categoría
+function filtrarPorCategoria() {
+    const categoria = document.getElementById("categoriaSelect").value;
+    if (categoria === "todas") {
+        mostrarProductos(productos);
+    } else {
+        const filtrados = productos.filter(p => p.categoria === categoria);
+        mostrarProductos(filtrados);
+    }
+}
+
+// Contador de visitas
+let visitas = localStorage.getItem("visitas") ? parseInt(localStorage.getItem("visitas")) : 0;
+visitas++;
+localStorage.setItem("visitas", visitas);
+const contadorVisitas = document.getElementById("contadorVisitas");
+if (contadorVisitas) contadorVisitas.textContent = `Visitas: ${visitas}`;
+
+// Contador de productos
+function actualizarContadorProductos() {
+    const contador = document.getElementById("contadorProductos");
+    if (contador) contador.textContent = `Productos en carrito: ${carrito.length}`;
+}
+
+// --- Función para mostrar vistas ---
+function showView(viewId) {
+  const views = document.querySelectorAll('.view');
+  views.forEach(view => view.style.display = 'none');
+  document.getElementById(viewId + 'View').style.display = 'block';
+}
