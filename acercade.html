@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de - StrideX Sneakers</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="showView('home')">
+                    <div class="logo-icon">SX</div>
+                    <span class="logo-text">StrideX Sneakers</span>
+                </div>
+                <nav class="nav desktop-nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="acercade.html">Acerca de</a>
+                    <a href="compras.html">Compras</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="icon-btn" onclick="toggleSearch()" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="icon-btn" onclick="showView('account')" aria-label="Cuenta">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <button class="icon-btn cart-btn" onclick="showView('cart')" aria-label="Carrito">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Acerca de StrideX Sneakers</h1>
+        <p>StrideX Sneakers nació para ofrecer a nuestros clientes los mejores tenis deportivos y casuales, combinando estilo, comodidad y calidad. Nos apasiona el calzado y la experiencia de cada paso que das.</p>
+        <p>Nuestro compromiso es brindar un servicio excelente, productos de calidad y una atención cercana a cada cliente. ¡Descubre más sobre nuestra historia y valores!</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <div class="logo-icon">SX</div>
+                        <span>StrideX Sneakers</span>
+                    </div>
+                    <p>Tu destino para los mejores tenis deportivos y casuales. Estilo y comodidad en cada paso.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StrideX Sneakers. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

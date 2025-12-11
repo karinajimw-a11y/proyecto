@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda - Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content container">
+            <div class="logo">
+                <div class="logo-icon">MT</div>
+                <div class="logo-text">Mi Tienda</div>
+            </div>
+            <nav class="nav desktop-nav">
+                <button onclick="window.location='index.html'">Inicio</button>
+                <button onclick="window.location='catalogo.html'">Tienda</button>
+                <button onclick="window.location='carrito.html'">Carrito</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h2>Checkout</h2>
+        <form class="checkout-form">
+            <div class="form-group">
+                <label>Nombre completo</label>
+                <input type="text" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label>Correo electrónico</label>
+                <input type="email" placeholder="correo@ejemplo.com" required>
+            </div>
+            <div class="form-group">
+                <label>Dirección</label>
+                <input type="text" placeholder="Calle, número, ciudad" required>
+            </div>
+            <div class="form-group">
+                <label>Método de pago</label>
+                <select>
+                    <option>Tarjeta de crédito</option>
+                    <option>PayPal</option>
+                </select>
+            </div>
+            <button class="btn-primary" type="submit">Pagar</button>
+        </form>
+    </section>
+     <script src="script.js"></script>
+</body>
+</html>

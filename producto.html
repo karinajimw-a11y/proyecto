@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Mi Tienda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content container">
+            <div class="logo" onclick="window.location='index.html'">
+                <div class="logo-icon">MT</div>
+                <div class="logo-text">Mi Tienda</div>
+            </div>
+            <nav class="nav desktop-nav">
+                <button onclick="window.location='index.html'">Inicio</button>
+                <button onclick="window.location='productos.html'">Productos</button>
+                <button onclick="window.location='contacto.html'">Contacto</button>
+                <button onclick="window.location='acercade.html'">Acerca de</button>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Buscar">🔍</button>
+                <button class="icon-btn" aria-label="Usuario">👤</button>
+                <button class="icon-btn" aria-label="Carrito">🛒</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Bienvenido a Mi Tienda</h1>
+                <p>Los mejores productos con envío rápido y seguro. Explora nuestra colección hoy mismo.</p>
+                <button class="btn-primary" onclick="window.location='productos.html'">Comprar Ahora</button>
+                <div class="hero-stats">
+                    <div>
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">Productos</div>
+                    </div>
+                    <div>
+                        <div class="stat-value">200+</div>
+                        <div class="stat-label">Clientes felices</div>
+                    </div>
+                    <div>
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Marcas</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/hero.jpg" alt="Hero">
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="section">
+        <div class="container">
+            <h2>Productos Destacados</h2>
+            <div class="products-grid">
+                <!-- Producto ejemplo -->
+                <div class="product-card">
+                    <div class="product-image"><img src="img/product1.jpg" alt="Producto 1"></div>
+                    <div class="product-info">
+                        <div class="product-brand">Marca A</div>
+                        <div class="product-name">Producto 1</div>
+                        <div class="product-price">
+                            <span class="price-current">$49.99</span>
+                            <span class="price-original">$69.99</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary">Agregar al carrito</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="img/product2.jpg" alt="Producto 2"></div>
+                    <div class="product-info">
+                        <div class="product-brand">Marca B</div>
+                        <div class="product-name">Producto 2</div>
+                        <div class="product-price">
+                            <span class="price-current">$29.99</span>
+                            <span class="price-original">$39.99</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary">Agregar al carrito</button>
+                </div>
+                <!-- Puedes agregar más productos aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

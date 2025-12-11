@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda - Catálogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content container">
+            <div class="logo">
+                <div class="logo-icon">MT</div>
+                <div class="logo-text">Mi Tienda</div>
+            </div>
+            <nav class="nav desktop-nav">
+                <button onclick="window.location='index.html'">Inicio</button>
+                <button onclick="window.location='catalogo.html'">Tienda</button>
+                <button onclick="window.location='carrito.html'">Carrito</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2>Catálogo de Productos</h2>
+            <div class="filters-panel">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria">
+                            <option value="all">Todas</option>
+                            <option value="ropa">Ropa</option>
+                            <option value="accesorios">Accesorios</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="precio">Precio</label>
+                        <select id="precio">
+                            <option value="all">Todos</option>
+                            <option value="0-50">$0 - $50</option>
+                            <option value="50-100">$50 - $100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" onclick="window.location='producto.html'">
+                    <div class="product-image"><img src="img/product1.jpg" alt="Producto 1"></div>
+                    <div class="product-info">
+                        <div class="product-brand">Marca A</div>
+                        <div class="product-name">Producto 1</div>
+                        <div class="product-price">
+                            <span class="price-current">$49.99</span>
+                            <span class="price-original">$69.99</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" onclick="window.location='producto.html'">
+                    <div class="product-image"><img src="img/product2.jpg" alt="Producto 2"></div>
+                    <div class="product-info">
+                        <div class="product-brand">Marca B</div>
+                        <div class="product-name">Producto 2</div>
+                        <div class="product-price">
+                            <span class="price-current">$29.99</span>
+                            <span class="price-original">$39.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <script src="script.js"></script>
+</body>
+</html>

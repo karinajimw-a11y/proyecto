@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda - Carrito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content container">
+            <div class="logo">
+                <div class="logo-icon">MT</div>
+                <div class="logo-text">Mi Tienda</div>
+            </div>
+            <nav class="nav desktop-nav">
+                <button onclick="window.location='index.html'">Inicio</button>
+                <button onclick="window.location='catalogo.html'">Tienda</button>
+                <button onclick="window.location='carrito.html'">Carrito</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h2>Mi Carrito</h2>
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="cart-item-image"><img src="img/product1.jpg" alt="Producto 1"></div>
+                <div class="cart-item-details">
+                    <div class="cart-item-header">
+                        <div class="cart-item-name">Producto 1</div>
+                        <div class="cart-item-price">$49.99</div>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn">-</button>
+                        <div class="quantity-value">1</div>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-item-image"><img src="img/product2.jpg" alt="Producto 2"></div>
+                <div class="cart-item-details">
+                    <div class="cart-item-header">
+                        <div class="cart-item-name">Producto 2</div>
+                        <div class="cart-item-price">$29.99</div>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn">-</button>
+                        <div class="quantity-value">1</div>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-primary" onclick="window.location='checkout.html'">Proceder al pago</button>
+    </section>
+     <script src="script.js"></script>
+</body>
+</html>
