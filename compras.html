@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra Exitosa - Artesanía Online</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Compras - Sillas Tejidas Sincelejo</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="bg-primary text-white p-3 text-center">
-        <h1>¡Gracias por tu compra!</h1>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🪑</div>
+        <div class="logo-text">
+          <h1>Sillas Tejidas Sincelejo</h1>
+          <p>Artesanía Colombiana</p>
+        </div>
+      </a>
 
-    <section class="container my-5 text-center">
-        <h2>Tu pedido ha sido procesado correctamente 🎉</h2>
-        <p>Pronto recibirás un correo con los detalles de tu compra.</p>
-        <a href="index.html" class="btn btn-primary">Volver al inicio</a>
-    </section>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="acercade.html">Acerca De</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="compras.html">Mis Compras</a>
+      </nav>
 
-    <footer class="bg-dark text-white text-center p-3">
-        &copy; 2025 Artesanía Online. Todos los derechos reservados.
-    </footer>
+      <div class="flex items-center gap-4">
+        <a href="carrito.html" class="cart-icon">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <div class="container" id="ordersContent"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Sillas Tejidas Sincelejo</h3>
+          <p>Artesanía colombiana de calidad. Sillas tejidas a mano por artesanos locales de Sincelejo, Sucre.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="acercade.html">Acerca De</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul>
+            <li>📞 +57 300 123 4567</li>
+            <li>✉️ ventas@sillassincelejo.com</li>
+            <li>📍 Sincelejo, Sucre, Colombia</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+            <a href="#">📘</a>
+            <a href="#">📷</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sillas Tejidas Sincelejo. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

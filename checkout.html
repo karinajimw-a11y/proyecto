@@ -1,58 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Artesanía Online</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Sillas Tejidas Sincelejo</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="bg-primary text-white p-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1>Artesanía Online</h1>
-            <nav>
-                <a href="index.html" class="text-white mx-2">Inicio</a>
-                <a href="catalogo.html" class="text-white mx-2">Productos</a>
-                <a href="carrito.html" class="text-white mx-2">Carrito</a>
-            </nav>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🪑</div>
+        <div class="logo-text">
+          <h1>Sillas Tejidas Sincelejo</h1>
+          <p>Artesanía Colombiana</p>
         </div>
-    </header>
+      </a>
 
-    <section class="container my-5">
-        <h2>Finalizar Compra</h2>
-        <form id="checkout-form">
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>Datos del Comprador</h4>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Nombre Completo</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="address" class="form-label">Dirección</label>
-                        <input type="text" id="address" class="form-control" required>
-                    </div>
-                </div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="acercade.html">Acerca De</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="compras.html">Mis Compras</a>
+      </nav>
 
-                <div class="col-md-6">
-                    <h4>Resumen de Compra</h4>
-                    <div id="checkout-summary"></div>
-                    <h5 class="mt-3">Total: $<span id="checkout-total">0</span></h5>
-                    <button type="submit" class="btn btn-success mt-3">Confirmar Compra</button>
-                </div>
+      <div class="flex items-center gap-4">
+        <a href="carrito.html" class="cart-icon">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <div class="container">
+    <h1 class="mb-8">Finalizar Compra</h1>
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+      <!-- Formulario -->
+      <form id="checkoutForm" onsubmit="submitCheckout(event)" style="display: grid; gap: 1.5rem;">
+        <!-- Información Personal -->
+        <div class="card p-6">
+          <h2 class="mb-6">👤 Información Personal</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label class="form-label">Nombre Completo</label>
+              <input type="text" name="name" class="form-input" required>
             </div>
-        </form>
-    </section>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Teléfono</label>
+              <input type="tel" name="phone" class="form-input" required>
+            </div>
+          </div>
+        </div>
 
-    <footer class="bg-dark text-white text-center p-3">
-        &copy; 2025 Artesanía Online. Todos los derechos reservados.
-    </footer>
+        <!-- Dirección de Envío -->
+        <div class="card p-6">
+          <h2 class="mb-6">📍 Dirección de Envío</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label class="form-label">Dirección</label>
+              <input type="text" name="address" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Ciudad</label>
+              <input type="text" name="city" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Departamento</label>
+              <select name="department" class="form-select">
+                <option>Sucre</option>
+                <option>Bolívar</option>
+                <option>Córdoba</option>
+                <option>Atlántico</option>
+                <option>Magdalena</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
-    <script src="script.js"></script>
+        <!-- Método de Pago -->
+        <div class="card p-6">
+          <h2 class="mb-6">💳 Método de Pago</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label class="form-label">Número de Tarjeta</label>
+              <input type="text" name="cardNumber" class="form-input" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label class="form-label">Nombre en la Tarjeta</label>
+              <input type="text" name="cardName" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Fecha de Vencimiento</label>
+              <input type="text" name="expiryDate" class="form-input" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">CVV</label>
+              <input type="text" name="cvv" class="form-input" placeholder="123" required>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Resumen -->
+      <div>
+        <div class="card p-6" id="checkoutSummary" style="position: sticky; top: 100px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Sillas Tejidas Sincelejo</h3>
+          <p>Artesanía colombiana de calidad. Sillas tejidas a mano por artesanos locales de Sincelejo, Sucre.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="acercade.html">Acerca De</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul>
+            <li>📞 +57 300 123 4567</li>
+            <li>✉️ ventas@sillassincelejo.com</li>
+            <li>📍 Sincelejo, Sucre, Colombia</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+            <a href="#">📘</a>
+            <a href="#">📷</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sillas Tejidas Sincelejo. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+   <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

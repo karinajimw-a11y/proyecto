@@ -1,47 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artesanía Online</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sillas Tejidas Sincelejo - Inicio</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="bg-primary text-white p-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1>Artesanía Online</h1>
-            <nav>
-                <a href="index.html" class="text-white mx-2">Inicio</a>
-                <a href="catalogo.html" class="text-white mx-2">Productos</a>
-                <a href="acercade.html" class="text-white mx-2">Acerca de</a>
-                <a href="contacto.html" class="text-white mx-2">Contacto</a>
-                <a href="#" class="text-white mx-2" id="cart-btn">Carrito (<span id="cart-count">0</span>)</a>
-            </nav>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🪑</div>
+        <div class="logo-text">
+          <h1>Sillas Tejidas Sincelejo</h1>
+          <p>Artesanía Colombiana</p>
         </div>
-    </header>
+      </a>
 
-    <!-- Hero Section -->
-    <section class="hero text-center p-5 bg-light">
-        <h2>Bienvenido a nuestro portal de productos artesanales</h2>
-        <p>Compra piezas únicas hechas con amor y dedicación.</p>
-        <a href="catalogo.html" class="btn btn-primary">Ver Productos</a>
-    </section>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="acercade.html">Acerca De</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="compras.html">Mis Compras</a>
+      </nav>
 
-    <!-- Productos Destacados -->
-    <section class="featured-products container my-5">
-        <h3>Productos Destacados</h3>
-        <div class="row" id="featured-products">
-            <!-- Productos generados por JS -->
+      <div class="flex items-center gap-4">
+        <a href="carrito.html" class="cart-icon">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Sillas Tejidas Artesanales</h1>
+        <p>Descubre la belleza de la artesanía sincelejana. Cada silla es una obra de arte tejida a mano por expertos artesanos colombianos.</p>
+        <a href="catalogo.html" class="btn btn-primary">Ver Catálogo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section style="padding: 4rem 0; background: white;">
+    <div class="container">
+      <div class="grid grid-cols-3">
+        <div style="text-align: center;">
+          <div style="background: var(--amber-100); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">
+            ✓
+          </div>
+          <h3>100% Artesanal</h3>
+          <p class="text-gray">Cada pieza tejida a mano con dedicación</p>
         </div>
-    </section>
+        <div style="text-align: center;">
+          <div style="background: var(--amber-100); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">
+            ✓
+          </div>
+          <h3>Materiales Naturales</h3>
+          <p class="text-gray">Fibras de calidad de la región</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="background: var(--amber-100); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">
+            ✓
+          </div>
+          <h3>Envíos Nacionales</h3>
+          <p class="text-gray">Entregamos en todo Colombia</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-3">
-        &copy; 2025 Artesanía Online. Todos los derechos reservados.
-    </footer>
+  <!-- Productos Destacados -->
+  <section class="container">
+    <div class="text-center mb-8">
+      <h2>Productos Destacados</h2>
+      <p class="text-gray">Lo mejor de nuestra colección</p>
+    </div>
+    <div class="grid grid-cols-3" id="featuredProducts"></div>
+    <div class="text-center mt-8">
+      <a href="catalogo.html" class="btn btn-secondary">Ver Todos los Productos →</a>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- CTA -->
+  <section style="padding: 4rem 0; background: linear-gradient(to right, var(--amber-100), var(--amber-200));">
+    <div class="container text-center">
+      <h2>¿Listo para decorar tu espacio?</h2>
+      <p class="text-gray mb-8" style="font-size: 1.25rem;">Contáctanos y descubre cómo nuestras sillas pueden transformar tu hogar</p>
+      <a href="contacto.html" class="btn btn-secondary">Contáctanos →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Sillas Tejidas Sincelejo</h3>
+          <p>Artesanía colombiana de calidad. Sillas tejidas a mano por artesanos locales de Sincelejo, Sucre.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="acercade.html">Acerca De</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul>
+            <li>📞 +57 300 123 4567</li>
+            <li>✉️ ventas@sillassincelejo.com</li>
+            <li>📍 Sincelejo, Sucre, Colombia</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+            <a href="#">📘</a>
+            <a href="#">📷</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sillas Tejidas Sincelejo. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Cargar productos destacados
+    document.addEventListener('DOMContentLoaded', function() {
+      const featuredProducts = products.filter(p => p.featured);
+      const grid = document.getElementById('featuredProducts');
+      
+      grid.innerHTML = featuredProducts.map(product => `
+        <a href="producto.html?id=${product.id}" class="card">
+          <div style="position: relative;">
+            <img src="${product.image}" alt="${product.name}" class="card-image">
+            <span class="badge badge-featured" style="position: absolute; top: 1rem; left: 1rem;">Destacado</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">${product.name}</h3>
+            <p class="card-description">${product.description}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="card-price">${formatPrice(product.price)}</span>
+              <button onclick="event.preventDefault(); addToCart(${product.id})" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </a>
+      `).join('');
+    });
+  </script>
 </body>
 </html>
